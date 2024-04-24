@@ -1,0 +1,90 @@
+const sampleUser = {
+  comments: [
+    {
+      _id: "662589485049202088033d22",
+      text: "Not good.",
+      username: "frank",
+      post_date_time: "2024-04-20T04:00:00.000Z",
+      votes: -3,
+      hidden: false,
+    },
+    {
+      _id: "662596a62ab33ffa8cc063b5",
+      text: "testing this new",
+      username: "frank",
+      post_date_time: "2024-04-21T22:43:50.457Z",
+      votes: 0,
+      hidden: true,
+    },
+  ],
+  downvoted_comments: [
+    {
+      _id: "662589485049202088033d22",
+      text: "Not good.",
+      username: "frank",
+      post_date_time: "2024-04-20T04:00:00.000Z",
+      votes: -3,
+      hidden: false,
+    },
+  ],
+  downvoted_questions: [
+    {
+      _id: "662589485049202088033d2a",
+      title: "What's swift?",
+      description: "I don't know. Who can help?",
+      posted_by: "frank",
+      post_date_time: "2024-04-20T07:00:00.000Z",
+      votes: 2,
+      hidden: false,
+      comments: ["662596a62ab33ffa8cc063b5"],
+      tag_ids: [],
+      tags: [],
+      userVote: "down",
+    },
+  ],
+  questions: [
+    {
+      _id: "662589485049202088033d2a",
+      title: "What's swift?",
+      description: "I don't know. Who can help?",
+      posted_by: "frank",
+      post_date_time: "2024-04-20T07:00:00.000Z",
+      votes: 2,
+      hidden: false,
+      comments: ["662596a62ab33ffa8cc063b5"],
+      tag_ids: [],
+      tags: [],
+      userVote: "up",
+    },
+  ],
+  upvoted_comments: [
+    {
+      _id: "662589485049202088033d22",
+      text: "Not good.",
+      username: "frank",
+      post_date_time: "2024-04-20T04:00:00.000Z",
+      votes: -3,
+      hidden: false,
+      userVote: "up",
+    },
+  ],
+  upvoted_questions: [
+    {
+      _id: "662589485049202088033d2a",
+      title: "What's swift?",
+      description: "I don't know. Who can help?",
+      posted_by: "frank",
+      post_date_time: "2024-04-20T07:00:00.000Z",
+      votes: 2,
+      hidden: false,
+      comments: ["662596a62ab33ffa8cc063b5"],
+      tag_ids: [],
+      __v: 1,
+      tags: [],
+      userVote: "up",
+    },
+  ],
+  username: "frank",
+};
+
+export { sampleUser };

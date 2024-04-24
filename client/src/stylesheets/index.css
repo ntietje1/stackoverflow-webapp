@@ -1,16 +1,114 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-html {
-    height: 99%;
-}
-
-body,
-#root {
-    height: 100%;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
-    margin: 0;
+  background-color: rgb(241 245 249);
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+ul ul,
+ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+ol ol,
+ul ol {
+  list-style-type: lower-latin;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+
+h1 {
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  color: rgb(8 145 178);
+}
+
+h2 {
+  font-size: 1.2rem /* 24px */;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  color: rgb(51 65 85);
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.link {
+  font-style: italic;
+  text-decoration-line: underline;
+  color: rgb(8 145 178);
+}
+
+.link:hover {
+  color: rgb(14 116 144);
+}
+
+label {
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /*  */;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  color: rgb(71 85 105);
+  margin-top: 2rem;
+}
+
+/* a {
+  text-decoration: underline;
+  color: rgb(8 145 178);
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 65ch;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form > * {
+  width: 100%;
+  max-width: 24rem /* 384px */;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+  padding: 0.5rem /* 4px */;
+  /* margin: 1rem 4px; */
+  border-radius: 0.375rem /* 6px */;
+  width: fit-content;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240);
+  border: 1px black solid;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225);
 }

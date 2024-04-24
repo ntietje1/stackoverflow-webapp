@@ -1,0 +1,10 @@
+{
+    "iis.configDir": "",
+    "sarif-viewer.connectToGithubCodeScanning": "off",
+    "cSpell.words": [
+        "downvoted",
+        "mockingoose",
+        "upvoted",
+        "uservote"
+    ]
+}

@@ -1,10 +1,14 @@
 // run this file to remove the fake_so database
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const { MONGO_URL } = require("./config");
 
 async function dropDatabase() {
   try {
     // Connect to MongoDB
-    await mongoose.connect('mongodb://localhost:27017/fake_so', { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect(MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     console.log("Connected to MongoDB");
 

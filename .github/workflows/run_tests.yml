@@ -1,0 +1,71 @@
+name: Run Tests
+
+on:
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  jest_tests:
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+
+    services:
+      mongodb:
+        image: mongo:5.0
+        ports:
+          - 27017:27017
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: |
+          cd $GITHUB_WORKSPACE/client/
+          npm install
+          cd $GITHUB_WORKSPACE/server/
+          npm install
+
+      - name: Run Jest tests
+        run: |
+          cd $GITHUB_WORKSPACE/server/
+          npm test
+
+  cypress_tests:
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+
+    services:
+      mongodb:
+        image: mongo:5.0
+        ports:
+          - 27017:27017
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: |
+          cd $GITHUB_WORKSPACE/client/
+          npm install
+          cd $GITHUB_WORKSPACE/server/
+          npm install
+
+      - name: Start server/client and run Cypress
+        run: |
+          cd $GITHUB_WORKSPACE/server/
+          node server.js &
+          cd $GITHUB_WORKSPACE/client/
+          npm start &
+          cd $GITHUB_WORKSPACE/client/
+          npx cypress run --headless --spec cypress/e2e/overall.cy.ts

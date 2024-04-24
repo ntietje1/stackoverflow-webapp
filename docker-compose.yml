@@ -6,6 +6,8 @@ services:
       - data:/data/db
   server:
     build: server
+    environment:
+      - NODE_ENV=production
     ports:
       - "8000:8000"
     volumes:
